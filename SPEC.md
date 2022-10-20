@@ -70,11 +70,11 @@ When an application generates an event, before sharing it publicly, it hashes th
 The steps to run the network are as follows:
 
 1. Clients hash their events and request for that hash to be stamped
-1. New stamp requests are broadcast to all nodes
-1. Each node collects new events into a block
-1. Each node works to form the next block in exchange for CLOCK
-1. When a node finalizes a block, it broadcasts it to all nodes
-1. Nodes accept the block only if all blocks are a valid sequence of signed hashes and their included timestamp is close enough to the local system time
+2. New stamp requests are broadcast to all nodes
+3. Each node collects new events into a block
+4. Each node works to form the next block in exchange for CLOCK
+5. When a node finalizes a block, it broadcasts it to all nodes
+6. Nodes accept the block only if all blocks are a valid sequence of signed hashes and their included timestamp is close enough to the local system time
 
 Nodes always consider the longest chain to be the correct one and will keep working on extending it. If two nodes broadcast different versions of the next block simultaneously, some nodes may receive one or the other first. In that case, they work on the first one they received, but save the other branch in case it becomes longer. The tie will be broken when the next block or signed events is written and one branch becomes longer; the nodes that were working on the other branch will then switch to the longer one.
 
@@ -104,6 +104,10 @@ Each block is a batch of ordered stamps. Each node attempts to earn the offered 
 
 *Preliminary API*
 
+#### JSON RPC API Methods
+
+##### stamp_createStamp
+##### stamp_getStamp
 
 
 ## Incentive
@@ -140,27 +144,27 @@ The network is broken into two bodies. Clients and Stampers. Clients request dat
 
 ```mermaid
 sequenceDiagram
-  participant dApp1
-  participant dApp2
-  participant dApp3
+  participant App1
+  participant App2
+  participant App3
   participant Stampede
-  Note left of dApp1: dApp1 creates event1
-  dApp1->>+Stampede: dApp2 stamps event1
+  Note left of App1: App1 creates event1
+  App1->>+Stampede: App2 stamps event1
   Note right of Stampede: append hash of event1<br/>to the ledger
-  Stampede->>-dApp1: 
-  Note left of dApp2: dApp2 creates event2
-  dApp2->>+Stampede: dApp2 stamps event2
+  Stampede->>-App1: 
+  Note left of App2: App2 creates event2
+  App2->>+Stampede: App2 stamps event2
   Note right of Stampede: append hash of event2<br/>to the ledger
-  Stampede->>-dApp2: 
-  dApp2->>+dApp3: dApp2 shares event2 with dApp3
-  Note left of dApp3: dApp3 receive event2
-  dApp3->>+Stampede: dApp3 verifies the stamp for event2
-  dApp1->>+dApp3: dApp2 shares event1 with dApp3
-  Note left of dApp3: dApp3 receive event1
-  Stampede->>-dApp3: 
-  dApp3->>+Stampede: dApp3 verifies the stamp for event1
-  Stampede->>-dApp3: 
-  Note left of dApp3: dApp2 knows event1<br/> happened before event2
+  Stampede->>-App2: 
+  App2->>+App3: App2 shares event2 with App3
+  Note left of App3: App3 receive event2
+  App3->>+Stampede: App3 verifies the stamp for event2
+  App1->>+App3: App1 shares event1 with App3
+  Note left of App3: App3 receive event1
+  Stampede->>-App3: 
+  App3->>+Stampede: App3 verifies the stamp for event1
+  Stampede->>-App3: 
+  Note left of App3: App2 knows event1<br/> happened before event2
 ```
 
 
