@@ -149,7 +149,7 @@ sequenceDiagram
   participant App3
   participant Stampede
   Note left of App1: App1 creates event1
-  App1->>+Stampede: App2 stamps event1
+  App1->>+Stampede: App1 stamps event1
   Note right of Stampede: append hash of event1<br/>to the ledger
   Stampede->>-App1: 
   Note left of App2: App2 creates event2
