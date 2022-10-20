@@ -158,31 +158,31 @@ sequenceDiagram
   participant App2
   participant App3
   participant Stampede
-  Note over App1:wrap: App1 creates Event1
-  Note over App1:wrap: App1 stamps Event1
+  Note over App1:nowrap: App1 creates Event1
+  Note over App1:nowrap: App1 stamps Event1
   App1->>+Stampede: 
-  Note over Stampede:wrap: append hash of Event1<br/>to the ledger
+  Note over Stampede:nowrap: append hash of <br/>Event1 to the ledger
   Stampede->>-App1: 
-  Note over App2:wrap: App2 creates Event2
-  Note over App2:wrap: App2 stamps Event2
+  Note over App2:nowrap: App2 creates Event2
+  Note over App2:nowrap: App2 stamps Event2
   App2->>+Stampede: 
-  Note over Stampede:wrap: append hash of Event2<br/>to the ledger
+  Note over Stampede:nowrap: append hash of <br/>Event2 to the ledger
   Stampede->>-App2: 
-  Note over App2:wrap: App2 shares Event2 with App3
+  Note over App2:nowrap: App2 shares Event2 <br/>with App3
   App2->>+App3: 
-  Note over App3:wrap: App3 receive Event2
-  Note over App3:wrap: App3 verifies the stamp for Event2
+  Note over App3:nowrap: App3 receive Event2
+  Note over App3:nowrap: App3 verifies the <br/>stamp for Event2
   App3->>+Stampede: 
-  Note over Stampede:wrap: checks ledger for Event2
+  Note over Stampede:nowrap: checks ledger <br/>for Event2
   Stampede->>-App3: 
-  Note over App1:wrap: App1 shares Event1 with App3
+  Note over App1:nowrap: App1 shares Event1 <br/>with App3
   App1->>+App3: 
-  Note over App3:wrap: App3 receive Event1
-  Note over App3:wrap: App3 verifies the stamp for Event1
+  Note over App3:nowrap: App3 receive Event1
+  Note over App3:nowrap: App3 verifies the <br/>stamp for Event1
   App3->>+Stampede: 
-  Note over Stampede:wrap: checks ledger for Event1
+  Note over Stampede:nowrap: checks ledger <br/>for Event1
   Stampede->>-App3: 
-  Note over App3:wrap: App2 now knows Event1<br/> happened before Event2
+  Note over App3:nowrap: App3 now knows <br/>Event1 happened <br/>before Event2
 ```
 
 
