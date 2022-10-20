@@ -9,11 +9,11 @@ Jlinc Labs - October 2022
 
 As centralized applications are replaced with decentralized networks and protocols, the need for "proof of event sequence" has become critical. 
 
-When validating a digital event; Proof-of-Identity (authorship) is solved with cryptographic key pairs, However Proof-of-When that event happened requires either trust-in-all-parties or 3rd party attestation.
+When validating a digital event; Proof-of-Identity (authorship) is solved with cryptographic key pairs, however Proof-of-When that event happened requires either trust-in-all-parties or 3rd party attestation.
 
-Current solutions "anchor" dWeb events by piggybacking on cryptocurrency ledgers, paying expensive fees for consensus algorithms, which represent overkill for anchoring data.
+Current solutions "anchor" dWeb events by piggybacking on cryptocurrency ledgers, paying extra fees for expensive cryptocurrency consensus algorithms, which is wasteful for just anchoring data.
 
-Stampede solves the Proof-of-When problem by providing decentralized sequencing at close-to-cost prices.
+Stampede solves the Proof-of-When problem by providing decentralized sequencing at predictably stable close-to-cost prices.
 
 Stampede is a level one (L1) blockchain who's sole purpose is sequence ordering events across distributed and distrusted applications.
 
@@ -32,7 +32,7 @@ Note: Stampede is a work in progress. Active research is under way, and new vers
     2. [Stampers](#stampers)
 3. [Stamping and event](#stamping-an-event)
     1. [Network](#network)
-    1. [A Stamp](#a-stamp)
+    1. [Stamps](#stamps)
 4. [Blocks](#blocks)
 5. [Incentive](#incentive)
     1. [CLOCK Coin](#clock-coin)
@@ -62,7 +62,7 @@ Stampede is a layer 1 blockchain with a minimal consensus algorithm called proof
 
 Stamping an event strictly guarantees that said event happened after event X and before event Y. 
 
-When an applications generates an event, before sharing it publically, it hashes the event (e.g. SHA256) and makes a request to a stampede client to have that event sequenced. Once stamped that event can be shared in anyway and the receiving party can check that stampede network to know "when" (what order) your event happened. 
+When an application generates an event, before sharing it publicly, it hashes the event (e.g. SHA256) and makes a request to a stampede client to have that event sequenced. Once stamped that event can be shared in any way and the receiving party can check that stampede network to know "when" (what order) that event happened. 
 
 
 ### Network
@@ -70,11 +70,11 @@ When an applications generates an event, before sharing it publically, it hashes
 The steps to run the network are as follows:
 
 1. Clients hash their events and request for that hash to be stamped
-1. New stamp requests are broadcast to all nodes.
-1. Each node collects new events into a block. 
+1. New stamp requests are broadcast to all nodes
+1. Each node collects new events into a block
 1. Each node works to form the next block in exchange for CLOCK
-1. When a node finalizes a block, it broadcasts it to all nodes.
-1. Nodes accept the block only if all blocks are a valid sequence of signed hashes and their included timestamp is close enough to the local system time.
+1. When a node finalizes a block, it broadcasts it to all nodes
+1. Nodes accept the block only if all blocks are a valid sequence of signed hashes and their included timestamp is close enough to the local system time
 
 Nodes always consider the longest chain to be the correct one and will keep working on extending it. If two nodes broadcast different versions of the next block simultaneously, some nodes may receive one or the other first. In that case, they work on the first one they received, but save the other branch in case it becomes longer. The tie will be broken when the next block or signed events is written and one branch becomes longer; the nodes that were working on the other branch will then switch to the longer one.
 
@@ -83,7 +83,7 @@ A major performance advantage of Stampede is the ability for a node who just swi
 New transaction broadcasts do not necessarily need to reach all nodes. As long as they reach many nodes, they will get into a block before long. Block broadcasts are also tolerant of dropped messages. If a node does not receive a block, it will request it when it receives the next block and realizes it missed one.
 
 
-### A Stamp
+### Stamps
 
 A Stamp attests to the fact that event X happened before T¹ and after T². A lot like a git commit, a stamp contains a time stamp but also falls in specific order sequence. 
 
@@ -100,6 +100,9 @@ Each sequence request event in a batch is considered to have happened in the ord
 
 Each block is a batch of ordered stamps. Each node attempts to earn the offered CLOCK by creating the next block. The node that writes the block earns the CLOCK offered by the stamps contained in it.
 
+### API
+
+*Perliminary API*
 
 ## Incentive
 
@@ -113,19 +116,20 @@ Clients buy CLOCK coin and exchange it for having their app events stamped (sequ
 
 ### CLOCK Coin 
 
-CLOCK coin is a stable coin pined to an index (TBD) more stable than USD. We aim to keep the amount of CLOCK a Stamp costs to be as affordable and predictable (consistent) as possible.
+CLOCK coin is a stable coin pined to a (TBD) commodities index more stable than USD. We aim to keep the amount of CLOCK a Stamp costs to be as affordable and predictable (consistent) as possible.
 
-##### TBD
+#### TBD
 
 - Issuance algorithm
 - Where you can buy and sell CLOCK 
-- Index CLOCK is pegged to
+- Which commodities index CLOCK will be pegged to
+
 
 ## Why not just anchor?
 
 Many modern distributed systems use one or more blockchains to "anchor" a reference to their data. This is often just for immutability but it's also often used for the purposes of resolving the order of events in time. 
 
-The Stampede network aims to both improve the speed and reduce the cost of reliably timestamping events across untrusted distributed systems.
+The Stampede network aims to both improve the speed and reduce the cost of reliably time stamping events across untrusted distributed systems.
 
 
 ## Sequencing events
