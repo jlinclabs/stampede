@@ -6,6 +6,7 @@ Jlinc Labs - October 2022
 
 ![stampede](https://user-images.githubusercontent.com/8385/197064752-ed848677-7bca-4eac-80da-1f3f3c092ba7.png)
 
+
 ## Abstract
 
 As centralized applications are replaced with decentralized networks and protocols, the need for "Proof-of-When" (or proof-of-sequence) has become critical.
@@ -50,19 +51,23 @@ Stampede is a layer 1 blockchain with a minimal consensus algorithm called proof
 
 There are two types of actors in the system . Clients and Stampers.
 
+
 ### Clients
 
 Clients are applications that emit events on the distributed web. Clients pay CLOCK to have their events stamped by stampers.
 
+
 ### Stampers
 
 Stampers work together to sequence order events as they come into the network. Stampers earn CLOCK by writing blocks of stamps to the blockchain.
+
 
 ## Stamping an Event
 
 Stamping an event strictly guarantees that said event happened after event X and before event Y.
 
 When an application generates an event, before sharing it publicly, it hashes the event (e.g. SHA256) and makes a request to a Stampede client to have that event sequenced. Once stamped that event can be shared in any way and the receiving party can check the Stampede network to verify "when" (what order) that event happened.
+
 
 ## Network
 
@@ -80,6 +85,7 @@ Nodes always consider the longest chain to be the correct one and will keep work
 A major performance advantage of Stampede is the ability for a node who just switched to a longer branch to re-write the missing blocks from the loosing branch(es) to the new main branch by re-hashing and proposing a new block.
 
 New transaction broadcasts do not necessarily need to reach all nodes. As long as they reach many nodes, they will get into a block before long. Block broadcasts are also tolerant of dropped messages. If a node does not receive a block, it will request it when it receives the next block and realizes it missed one.
+
 
 ### Stamps
 
@@ -99,6 +105,7 @@ Stamps are batched into blocks. Stamps are time-ordered within each block. Each 
 
 The node that writes the block earns the CLOCK offered by the stamps contained in it.
 
+
 ### Scaling and Performance
 
 #### Topical Chains
@@ -106,6 +113,7 @@ The node that writes the block earns the CLOCK offered by the stamps contained i
 In the future, additional performance can be reached by reducing the time it takes to negotiate the next block by forking into topical blockchains.
 
 Each Stamping Node in the network must work on all topic chains.
+
 
 ### Security
 
@@ -116,6 +124,7 @@ Each Stamping Node in the network must work on all topic chains.
 AKA A early-event-attack
 
 Early-event-attacks are secured against by nodes rejecting new blocks that contain stamps with timestamps that are either older than the latest stamp on the chain or older than the node's right-now minus some wiggle-room.
+
 
 ##### …after it really did
 
@@ -224,9 +233,11 @@ If most of the nodes in the network are paid for by the applications that need e
 
 Clients buy CLOCK coin and exchange it for having their app events stamped (sequence ordered) by the network.
 
+
 ### CLOCK Coin
 
 CLOCK coin is a stable coin pined to a (TBD) commodities index more stable than USD. We aim to keep the amount of CLOCK a Stamp costs to be as affordable and predictable (consistent) as possible.
+
 
 #### TBD
 
@@ -241,9 +252,14 @@ Anyone with spare CPU/GPU on a low-latency network will be able to easily run a 
 
 Applications that emit a lot of events and want to offset their Stamping costs can also run nodes to earn back from CLOCK.
 
-## Why not just anchor?
 
-Many modern distributed systems use one or more blockchains to "anchor" a reference to their data. This is often just for immutability but it's also often used for the purposes of resolving the order of events in time.
+## Why not anchor on a cryptocurrency?
+
+Anchoring on any blockchain with more concerns than just sequence-ordering will always spend more system resources than is strictly necessary for our problem. 
+
+Stampede's dedicated blockchain is designed to spend as little resources as possible ensuring all events fall in some specific order, respecting time as closely as possible.
+
+It is possible that for two distributed events to happen at effectively the exact same time. However Stampede ensures that all events falls in a specific linear order. Stampede picks which event goes first in a non-predictable but deterministic way.
 
 The Stampede network aims to both improve the speed and reduce the cost of reliably time stamping events across untrusted distributed systems.
 
