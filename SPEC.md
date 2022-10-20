@@ -270,35 +270,35 @@ The network is broken into two bodies. Clients and Stampers. Clients request dat
 
 ```mermaid
 sequenceDiagram
-  participant App1
-  participant App2
-  participant App3
-  participant Stampede
-  Note over App1:nowrap: App1 creates Event1
-  Note over App1:nowrap: App1 stamps Event1
-  App1->>+Stampede: 
-  Note over Stampede:nowrap: append hash of <br/>Event1 to the ledger
-  Stampede->>-App1: 
-  Note over App2:nowrap: App2 creates Event2
-  Note over App2:nowrap: App2 stamps Event2
-  App2->>+Stampede: 
-  Note over Stampede:nowrap: append hash of <br/>Event2 to the ledger
-  Stampede->>-App2: 
-  Note over App2:nowrap: App2 shares Event2 <br/>with App3
-  App2->>+App3: 
-  Note over App3:nowrap: App3 receives Event2
-  Note over App3:nowrap: App3 verifies the <br/>stamp for Event2
-  App3->>+Stampede: 
-  Note over Stampede:nowrap: checks ledger <br/>for Event2
-  Stampede->>-App3: 
-  Note over App1:nowrap: App1 shares Event1 <br/>with App3
-  App1->>+App3: 
-  Note over App3:nowrap: App3 receives Event1
-  Note over App3:nowrap: App3 verifies the <br/>stamp for Event1
-  App3->>+Stampede: 
-  Note over Stampede:nowrap: checks ledger <br/>for Event1
-  Stampede->>-App3: 
-  Note over App3:nowrap: App3 now knows <br/>Event1 happened <br/>before Event2
+  participant A1 as App1
+  participant A2 as App2
+  participant A3 as App3
+  participant St as Stampede
+  Note over A1:nowrap: creates Event1
+  Note over A1:nowrap: stamps Event1
+  A1->>+St: 
+  Note over St:nowrap: appends hash of <br/>Event1 to the ledger
+  St->>-A1: 
+  Note over A2:nowrap: creates Event2
+  Note over A2:nowrap: stamps Event2
+  A2->>+St: 
+  Note over St:nowrap: appends hash of <br/>Event2 to the ledger
+  St->>-A2: 
+  Note over A2:nowrap: shares Event2 <br/>with App3
+  A2->>+A3: 
+  Note over A3:nowrap: receives Event2
+  Note over A3:nowrap: verifies the <br/>stamp for Event2
+  A3->>+St: 
+  Note over St:nowrap: checks ledger <br/>for Event2
+  St->>-A3: 
+  Note over A1:nowrap: shares Event1 <br/>with App3
+  A1->>+A3: 
+  Note over A3:nowrap: receives Event1
+  Note over A3:nowrap: verifies the <br/>stamp for Event1
+  A3->>+St: 
+  Note over St:nowrap: checks ledger <br/>for Event1
+  St->>-A3: 
+  Note over A3:nowrap: App3 now knows <br/>Event1 happened <br/>before Event2
 ```
 
 
