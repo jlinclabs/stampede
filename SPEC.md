@@ -133,7 +133,8 @@ The Stampede network aims to both improve the speed and reduce the cost of relia
 
 
 ## Sequencing events
-The network is broken into two bodies. Clients and Stampers. Users request data be chronstamped and Observers chronstamp Users's data.
+
+The network is broken into two bodies. Clients and Stampers. Clients request data be stamped and Stampers. Other Clients request verification of stamps from Clients.
 
 ```mermaid
 sequenceDiagram
