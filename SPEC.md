@@ -148,23 +148,31 @@ sequenceDiagram
   participant App2
   participant App3
   participant Stampede
-  Note left of App1: App1 creates event1
-  App1->>+Stampede: App1 stamps event1
-  Note right of Stampede: append hash of event1<br/>to the ledger
+  Note over App1: App1 creates Event1
+  Note over App1: App1 stamps Event1
+  App1->>+Stampede: 
+  Note over Stampede: append hash of Event1<br/>to the ledger
   Stampede->>-App1: 
-  Note left of App2: App2 creates event2
-  App2->>+Stampede: App2 stamps event2
-  Note right of Stampede: append hash of event2<br/>to the ledger
+  Note over App2: App2 creates Event2
+  Note over App2: App2 stamps Event2
+  App2->>+Stampede: 
+  Note over Stampede: append hash of Event2<br/>to the ledger
   Stampede->>-App2: 
-  App2->>+App3: App2 shares event2 with App3
-  Note left of App3: App3 receive event2
-  App3->>+Stampede: App3 verifies the stamp for event2
-  App1->>+App3: App1 shares event1 with App3
-  Note left of App3: App3 receive event1
+  Note over App2: App2 shares Event2 with App3
+  App2->>+App3: 
+  Note over App3: App3 receive Event2
+  Note over App3: App3 verifies the stamp for Event2
+  App3->>+Stampede: 
+  Note over Stampede: checks ledger for Event2
   Stampede->>-App3: 
-  App3->>+Stampede: App3 verifies the stamp for event1
+  Note over App1: App1 shares Event1 with App3
+  App1->>+App3: 
+  Note over App3: App3 receive Event1
+  Note over App3: App3 verifies the stamp for Event1
+  App3->>+Stampede: 
+  Note over Stampede: checks ledger for Event1
   Stampede->>-App3: 
-  Note left of App3: App2 knows event1<br/> happened before event2
+  Note over App3: App2 now knows Event1<br/> happened before Event2
 ```
 
 
