@@ -180,8 +180,7 @@ sequenceDiagram
 
 ### Unknowns
 
-- do we need to write a chronological timestamp to the blocks?
-  - do we need consesus checking hashing and time window?
-- do we need to ensure that the data were hashing has not been seen before? 
+- Do we need to write a chronological timestamp to the blocks?
+  - Do we need consesus checking hashing and time window?
+- Do we need to ensure that the data were hashing has not been seen before? 
   - Is there an attack enabled by re-stamping the same value?
-- does mining generate new clock? no
