@@ -9,13 +9,13 @@ Jlinc Labs - October 2022
 
 As centralized applications are replaced with decentralized networks and protocols, the need for "proof of event sequence" has become critical. 
 
-When validating a digital event; Proof-of-Identity (authorship) is solved with cryptographic key pairs, However Proof-of-When that event happened requires either trust-in-all-parties or 3rd party attestation.
+When validating a digital event, Proof-of-Identity (authorship) is solved with cryptographic key pairs, However Proof-of-When that event happened requires either trust-in-all-parties or 3rd party attestation.
 
 Current solutions "anchor" dWeb events by piggybacking on cryptocurrency ledgers, paying expensive fees for overkill consensus algorithms.
 
 Stampede solves the Proof-of-When problem by providing decentralized sequencing at close-to-cost prices.
 
-Stampede is a level one (L1) blockchain who's sole purpose is sequence ordering events across distributed and distrusted applications.
+Stampede is a layer one (L1) blockchain who's sole purpose is sequence ordering events across distributed and distrusted applications.
 
 Stampede is a decentralized "proof of sequence" algorithmic market. The market runs on a blockchain with a native token (called "CLOCK"), which Stampers earn by "stamping" client events. Conversely, clients pay CLOCK to Stampers to stamp events as they emit them.
 
