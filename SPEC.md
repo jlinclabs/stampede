@@ -17,7 +17,7 @@ Current solutions "anchor" dWeb events by piggybacking on cryptocurrency ledgers
 
 Stampede solves the Proof-of-When problem by providing decentralized sequencing at predictably stable close-to-cost prices.
 
-Stampede is a level one (L1) blockchain who's sole purpose is sequence ordering events across distributed and distrusted applications.
+Stampede is a layer one (L1) blockchain who's sole purpose is sequence ordering events across distributed and distrusted applications.
 
 Stampede is a decentralized "proof of sequence" algorithmic market. The market runs on a blockchain with a native token (called "CLOCK"), which Stampers earn by "stamping" client events. Conversely, clients pay CLOCK to Stampers to stamp events as they emit them.
 
