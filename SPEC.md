@@ -53,10 +53,18 @@ Stampede is a layer 1 blockchain with a minimal consensus algorithm called proof
 
 ### Clients
 
+The explosion of Web3 distributed networks will exponentially increase the need for data resolution.
+
+Potential uses of Stampede:
+-Non-monetary data focused networks like Ceramic, TBD/Web5, etc.
+-dApps
+-Decentralized audit logs
+-Supply chain accounting
+-Private peer-to-peer transactions 
 
 ### Stampers
 
-
+Anyone with spare CPU/GPU on a moderately current OS/device will be able to easily download software to have their computer operate in the background as a node.
 
 ## Stamping an Event
 
