@@ -9,7 +9,7 @@ Jlinc Labs - October 2022
 
 As centralized applications are replaced with decentralized networks and protocols, the need for "proof of event sequence" has become critical. 
 
-When validating a digital event; Proof-of-Identity (authorship) is solved with cryptographic key pairs, however Proof-of-When that event happened requires either trust-in-all-parties or 3rd party attestation.
+When validating a digital event, Proof-of-Identity (authorship) is solved with cryptographic key pairs, however Proof-of-When that event happened requires either trust-in-all-parties or 3rd party attestation.
 
 Current solutions "anchor" dWeb events by piggybacking on cryptocurrency ledgers, paying extra fees for expensive cryptocurrency consensus algorithms, which is wasteful for just anchoring data.
 
