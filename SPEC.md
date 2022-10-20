@@ -102,7 +102,9 @@ Each block is a batch of ordered stamps. Each node attempts to earn the offered 
 
 ### API
 
-*Perliminary API*
+*Preliminary API*
+
+
 
 ## Incentive
 
