@@ -100,6 +100,9 @@ Each sequence request event in a batch is considered to have happened in the ord
 
 Each block is a batch of ordered stamps. Each node attempts to earn the offered CLOCK by creating the next block. The node that writes the block earns the CLOCK offered by the stamps contained in it.
 
+### Scaling and Performance
+
+
 ### API
 
 *Preliminary API*
@@ -107,6 +110,7 @@ Each block is a batch of ordered stamps. Each node attempts to earn the offered 
 #### JSON RPC API Methods
 
 ##### stamp_createStamp
+
 ##### stamp_getStamp
 
 
@@ -130,6 +134,12 @@ CLOCK coin is a stable coin pined to a (TBD) commodities index more stable than 
 - Where you can buy and sell CLOCK 
 - Which commodities index CLOCK will be pegged to
 
+
+### Who can stamp?
+
+Anyone with spare CPU/GPU on a low-latency network will be able to easily run a stampede node. 
+
+Applications that emit a lot of events and want to offset their Stamping costs can also run nodes to earn back from CLOCK.
 
 ## Why not just anchor?
 
@@ -176,9 +186,20 @@ sequenceDiagram
 ```
 
 
+## Use Cases
 
+Any applications that share events with untrusted peers can reliably time-order those events when they're stamped by Stampede.
 
+### Distributed Apps & Databases
 
+- Non-monetary data focused networks like Ceramic, TBD/Web5, etc.
+- dApps
+- Decentralized audit logs
+
+### Industries
+
+- Supply chain accounting
+- Private peer-to-peer chat & social applications
 
 
 
