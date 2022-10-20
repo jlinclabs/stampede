@@ -109,8 +109,6 @@ Applications that pay CLOCK to have their events stamped by the network are ince
 
 If most of the nodes in the network are paid for by the applications that need event stamps to function; then the network should be relatively free. Nodes can both pay to have their app events stamped and earn by stamping the events of other apps.
 
-CLOCK coins will be centrally controlled by the Time Coin Reserve (founded in 2023 by Jim Fournier AKA Time Jesus).
-
 Clients buy CLOCK coin and exchange it for having their app events stamped (sequence ordered) by the network.
 
 ### CLOCK Coin 
