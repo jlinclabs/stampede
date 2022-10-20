@@ -126,7 +126,7 @@ Clients buy CLOCK coin and exchange it for having their app events stamped (sequ
 
 ### CLOCK Coin 
 
-CLOCK coin is a stable coin pined to a (TBD) commodities index more stable than USD. We aim to keep the amount of CLOCK a Stamp costs to be as affordable and predictable (consistent) as possible.
+CLOCK coin is a stable coin pinned to a (TBD) commodities index more stable than USD. We aim to keep the amount of CLOCK a Stamp costs to be as affordable and predictable (consistent) as possible.
 
 #### TBD
 
