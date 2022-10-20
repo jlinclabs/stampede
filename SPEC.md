@@ -11,7 +11,7 @@ As centralized applications are replaced with decentralized networks and protoco
 
 When validating a digital event; Proof-of-Identity (authorship) is solved with cryptographic key pairs, However Proof-of-When that event happened requires either trust-in-all-parties or 3rd party attestation.
 
-Current solutions "anchor" dWeb events by piggybacking on cryptocurrency ledgers, paying expensive fees for overkill consensus algorithms.
+Current solutions "anchor" dWeb events by piggybacking on cryptocurrency ledgers, paying expensive fees for consensus algorithms.
 
 Stampede solves the Proof-of-When problem by providing decentralized sequencing at close-to-cost prices.
 
