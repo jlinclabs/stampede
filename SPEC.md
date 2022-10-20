@@ -170,14 +170,14 @@ sequenceDiagram
   Stampede->>-App2: 
   Note over App2:nowrap: App2 shares Event2 <br/>with App3
   App2->>+App3: 
-  Note over App3:nowrap: App3 receive Event2
+  Note over App3:nowrap: App3 receives Event2
   Note over App3:nowrap: App3 verifies the <br/>stamp for Event2
   App3->>+Stampede: 
   Note over Stampede:nowrap: checks ledger <br/>for Event2
   Stampede->>-App3: 
   Note over App1:nowrap: App1 shares Event1 <br/>with App3
   App1->>+App3: 
-  Note over App3:nowrap: App3 receive Event1
+  Note over App3:nowrap: App3 receives Event1
   Note over App3:nowrap: App3 verifies the <br/>stamp for Event1
   App3->>+Stampede: 
   Note over Stampede:nowrap: checks ledger <br/>for Event1
